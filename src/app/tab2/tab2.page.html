@@ -14,23 +14,21 @@
           size="large" 
           style = "width: 100%" 
           (click)="lowButton()">
-          200P | Low click | x 0
+          {{lowPrice}}P | Low click | x {{lowCounter}}
           </ion-button>
           <ion-button 
           expand="block"              
-          disabled 
           size="large" 
           style = "width: 100%" 
           (click)="mediumButton()">
-          800P | Medium click | x 0
+          {{medPrice}}P | Medium click | x {{medCounter}}
           </ion-button>
           <ion-button 
-          expand="block"              
-          disabled 
+          expand="block"               
           size="large" 
           style = "width: 100%" 
           (click)="strongButton()">
-          15000p | Strong click | x 0 
+          {{strPrice}}P | Strong click | x {{strCounter}} 
           </ion-button>
         </ion-col>
         
