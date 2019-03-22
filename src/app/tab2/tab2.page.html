@@ -1,9 +1,38 @@
 <ion-header>
   <ion-toolbar>
     <ion-title>
-      Tab Two
+      Store
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content></ion-content>
+<ion-content>
+    <ion-card  class="welcome-card">
+        <ion-col style="display: flex;flex-direction: column;align-items: center;">
+          <ion-button 
+          expand="block"              
+          size="large" 
+          style = "width: 100%" 
+          (click)="lowButton()">
+          200P | Low click | x 0
+          </ion-button>
+          <ion-button 
+          expand="block"              
+          disabled 
+          size="large" 
+          style = "width: 100%" 
+          (click)="mediumButton()">
+          800P | Medium click | x 0
+          </ion-button>
+          <ion-button 
+          expand="block"              
+          disabled 
+          size="large" 
+          style = "width: 100%" 
+          (click)="strongButton()">
+          15000p | Strong click | x 0 
+          </ion-button>
+        </ion-col>
+        
+      </ion-card>
+</ion-content>
