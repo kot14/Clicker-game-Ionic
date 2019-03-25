@@ -1,22 +1,40 @@
 import { Injectable } from '@angular/core';
-import { Subject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class MainServiceService {
-  public points: number;
-  private _type = new Subject<number>();
-  public type$ = this._type.asObservable();
-  constructor() { }
+  public points = 0;
+  public pointsPS = 0;
+  public lowCount = 0;
+  public medCount = 0;
+  public strCount = 0;
+  public lowPrice = 200;
+  public medPrice = 800;
+  public strPrice = 1200;
 
-  public type0(t0 = 0) {
-    this._type.next(t0);
+  public autoClick = setInterval(() => {this.points += this.pointsPS;}, 1000);
+
+
+  constructor(){
   }
-  public type1(t1 = 1) {
-    this._type.next(t1);
+
+  public type0() {
+    this.points -= this.lowPrice;
+    this.pointsPS ++;
+    this.lowCount ++;
+    this.lowPrice += this.lowPrice; 
+  }  
+  public type1() {
+    this.points -= this.medPrice;
+    this.pointsPS ++;
+    this.medCount ++;
+    this.medPrice += this.medPrice;
   }
-  public type2(t2 = 2) {
-    this._type.next(t2);
+  public type2() {
+    this.points -= this.strPrice;
+    this.pointsPS ++;
+    this.strCount ++;
+    this.strPrice += this.strPrice;
   }
 }

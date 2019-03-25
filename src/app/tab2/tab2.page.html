@@ -10,25 +10,28 @@
     <ion-card  class="welcome-card">
         <ion-col style="display: flex;flex-direction: column;align-items: center;">
           <ion-button 
-          expand="block"              
+          expand="block"         
+          [disabled]="this.mainService.points < this.mainService.lowPrice "  
           size="large" 
           style = "width: 100%" 
           (click)="lowButton()">
-          {{lowPrice}}P | Low click | x {{lowCounter}}
+          {{this.mainService.lowPrice}}P | Low click | x {{this.mainService.lowCount}}
           </ion-button>
           <ion-button 
-          expand="block"              
+          expand="block" 
+          [disabled]="this.mainService.points < this.mainService.medPrice "             
           size="large" 
           style = "width: 100%" 
           (click)="mediumButton()">
-          {{medPrice}}P | Medium click | x {{medCounter}}
+          {{this.mainService.medPrice}}P | Medium click | x {{this.mainService.medCount}}
           </ion-button>
           <ion-button 
           expand="block"               
           size="large" 
+          [disabled]="this.mainService.points < this.mainService.strPrice " 
           style = "width: 100%" 
           (click)="strongButton()">
-          {{strPrice}}P | Strong click | x {{strCounter}} 
+          {{this.mainService.strPrice}}P | Strong click | x {{this.mainService.strCount}} 
           </ion-button>
         </ion-col>
         

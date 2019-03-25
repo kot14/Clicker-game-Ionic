@@ -18,8 +18,8 @@
             <ion-button size="large" (click)="gainPoints()">Click Me!</ion-button>
         </ion-card-content>
         <ion-row>
-          <ion-input>Point:{{points}}</ion-input>
-          <ion-input>Clicked per second: {{pointsPS}}</ion-input>
+          <ion-input>Point:{{this.mainService.points}}</ion-input>
+          <ion-input>Clicked per second: {{this.mainService.pointsPS}}</ion-input>
         </ion-row>
       </ion-col>
     </ion-card>   
@@ -29,13 +29,13 @@
       </ion-list-header>
       <ion-item lines="full">
           <ion-label>
-              <h5>Low click: {{lowCount}}</h5>
+              <h5>Low click: {{this.mainService.lowCount}}</h5>
           </ion-label>
           <ion-label>
-              <h5>Medium click: {{medCount}}</h5>
+              <h5>Medium click: {{this.mainService.medCount}}</h5>
           </ion-label>
           <ion-label>
-              <h5>Strong click: {{strCount}}</h5>
+              <h5>Strong click: {{this.mainService.strCount}}</h5>
           </ion-label>
         </ion-item>
     </ion-list>
