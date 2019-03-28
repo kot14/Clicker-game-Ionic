@@ -13,5 +13,17 @@ export class Tab1Page {
   gainPoints() {
       this.mainService.points += this.pointsPC;   
     };
+    lowButton(){
+      this.mainService.type0();
+    }
+  
+    mediumButton(){
+      this.mainService.type1();
+      
+    }
+  
+    strongButton(){
+      this.mainService.type2();
+    }   
 
 }

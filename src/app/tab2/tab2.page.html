@@ -1,7 +1,7 @@
 <ion-header>
   <ion-toolbar>
     <ion-title>
-      Store
+      save/load
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -10,30 +10,19 @@
     <ion-card  class="welcome-card">
         <ion-col style="display: flex;flex-direction: column;align-items: center;">
           <ion-button 
-          expand="block"         
-          [disabled]="this.mainService.points < this.mainService.lowPrice "  
+          expand="block"              
           size="large" 
-          style = "width: 100%" 
-          (click)="lowButton()">
-          {{this.mainService.lowPrice}}P | Low click | x {{this.mainService.lowCount}}
-          </ion-button>
-          <ion-button 
-          expand="block" 
-          [disabled]="this.mainService.points < this.mainService.medPrice "             
-          size="large" 
-          style = "width: 100%" 
-          (click)="mediumButton()">
-          {{this.mainService.medPrice}}P | Medium click | x {{this.mainService.medCount}}
-          </ion-button>
-          <ion-button 
-          expand="block"               
-          size="large" 
-          [disabled]="this.mainService.points < this.mainService.strPrice " 
-          style = "width: 100%" 
-          (click)="strongButton()">
-          {{this.mainService.strPrice}}P | Strong click | x {{this.mainService.strCount}} 
+          style = "width: 100%">
+          Save GAME
           </ion-button>
         </ion-col>
-        
+        <ion-col style="display: flex;flex-direction: column;align-items: center;">
+            <ion-button 
+            expand="block"              
+            size="large" 
+            style = "width: 100%">
+            Load Game
+            </ion-button>
+        </ion-col>       
       </ion-card>
 </ion-content>
