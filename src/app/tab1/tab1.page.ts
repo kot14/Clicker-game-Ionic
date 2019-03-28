@@ -7,11 +7,11 @@ import { MainServiceService } from '../services/main-service.service';
   styleUrls: ['tab1.page.scss']
 })
 export class Tab1Page {
- public pointsPC = 1;
+ 
 
  constructor( private mainService: MainServiceService){}
   gainPoints() {
-      this.mainService.points += this.pointsPC;   
+      this.mainService.points += this.mainService.pointsPC;   
     };
     lowButton(){
       this.mainService.type0();

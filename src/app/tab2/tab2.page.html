@@ -1,28 +1,70 @@
 <ion-header>
   <ion-toolbar>
     <ion-title>
-      save/load
+      Store
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-    <ion-card  class="welcome-card">
-        <ion-col style="display: flex;flex-direction: column;align-items: center;">
-          <ion-button 
-          expand="block"              
+  <ion-card  class="welcome-card">
+    <ion-row>
+      <ion-col>
+      <ion-button               
+      size="large"
+      expand="block"               
+      (click)="this.mainService.clickbuff(n=0)"
+      >
+      twice click
+      </ion-button>
+    </ion-col>
+    <ion-col>
+      <ion-button               
+        size="large"
+        expand="block" 
+        (click)="this.mainService.clickbuff(n=1)"
+        >
+        super click
+      </ion-button>
+    </ion-col>
+    <ion-col>
+      <ion-button               
+      size="large" 
+      expand="block"
+      (click)="this.mainService.clickbuff(n=2)"
+      >
+      turbo click
+    </ion-button>
+  </ion-col>
+    </ion-row>
+    <ion-row>
+        <ion-col>
+        <ion-button               
+        size="large"
+        expand="block" 
+        (click)="this.mainService.clickbuff(n=3)"
+        >
+        many click
+        </ion-button>
+      </ion-col>
+      <ion-col>
+        <ion-button               
           size="large" 
-          style = "width: 100%">
-          Save GAME
-          </ion-button>
-        </ion-col>
-        <ion-col style="display: flex;flex-direction: column;align-items: center;">
-            <ion-button 
-            expand="block"              
-            size="large" 
-            style = "width: 100%">
-            Load Game
-            </ion-button>
-        </ion-col>       
-      </ion-card>
+          expand="block"
+          (click)="this.mainService.clickbuff(n=4)"
+          >
+          very coast click
+        </ion-button>
+      </ion-col>
+      <ion-col>
+        <ion-button               
+        size="large" 
+        expand="block"
+        (click)="this.mainService.clickbuff(n=5)"
+        >
+        WOW you can buy it!?
+      </ion-button>
+    </ion-col>
+      </ion-row>
+  </ion-card>
 </ion-content>
