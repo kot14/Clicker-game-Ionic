@@ -11,19 +11,6 @@ export class Tab1Page {
 
  constructor( private mainService: MainServiceService){}
   gainPoints() {
-      this.mainService.points += this.mainService.pointsPC;   
+      this.mainService.points += this.mainService.pointsPC;  
     };
-    lowButton(){
-      this.mainService.type0();
-    }
-  
-    mediumButton(){
-      this.mainService.type1();
-      
-    }
-  
-    strongButton(){
-      this.mainService.type2();
-    }   
-
 }

@@ -10,18 +10,4 @@ export class Tab2Page {
   constructor(private mainService: MainServiceService){}
  
 
-
-
-  lowButton(){
-    this.mainService.type0();
-  }
-
-  mediumButton(){
-    this.mainService.type1();
-    
-  }
-
-  strongButton(){
-    this.mainService.type2();
-  }
 }

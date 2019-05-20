@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { Save } from '../models/save-model';
-import { Subject, BehaviorSubject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -17,13 +16,16 @@ export class MainServiceService {
   public strPrice = 1200;
 
 
-  public autoClick = setInterval(() => {this.points += this.pointsPS;}, 1000);
+
+  public autoClick = setInterval(() => { this.points += this.pointsPS; }, 1000);
 
 
-  constructor(){
+  constructor() {
   }
 
-  public load(){
+
+
+  public load() {
     let json = localStorage.getItem('values');
     const data = JSON.parse(json);
     this.points = data.points;
@@ -36,7 +38,7 @@ export class MainServiceService {
     this.strPrice = data.strPrice;
   }
 
-  public save(){
+  public save() {
     localStorage.removeItem('values');
     const newSave = new Save(this.points,
       this.pointsPS,
@@ -46,49 +48,54 @@ export class MainServiceService {
       this.lowPrice,
       this.medPrice,
       this.strPrice);
-      localStorage.setItem('values', JSON.stringify(newSave));
+    localStorage.setItem('values', JSON.stringify(newSave));
   }
-  public devButton(){
+  public devButton() {
     this.pointsPS += 500;
   }
-  public clickbuff(n){
-    switch(n){
+  public clickbuff(n) {
+    switch (n) {
       case 0:
-        this.pointsPC +=2;
-      break
+        this.pointsPC += 2;
+        break
       case 1:
-        this.pointsPC +=5;
-      break
+        this.pointsPC += 5;
+        break
       case 2:
-        this.pointsPC +=10;
-      break 
+        this.pointsPC += 10;
+        break
       case 3:
-        this.pointsPC +=20;
-      break
+        this.pointsPC += 20;
+        break
       case 4:
-        this.pointsPC +=200;
-      break
+        this.pointsPC += 200;
+        break
       case 5:
-        this.pointsPC +=500;
-      break
+        this.pointsPC += 500;
+        break
     }
   }
-  public type0() {
-    this.points -= this.lowPrice;
-    this.pointsPS += 5;
-    this.lowCount ++;
-    this.lowPrice += this.lowPrice; 
-  }  
-  public type1() {
-    this.points -= this.medPrice;
-    this.pointsPS += 10;
-    this.medCount ++;
-    this.medPrice += this.medPrice;
+  public autoclick(n) {
+    switch (n) {
+      case 0:
+        this.points -= this.lowPrice;
+        this.pointsPS += 5;
+        this.lowCount++;
+        this.lowPrice += this.lowPrice;
+        break
+      case 1:
+        this.points -= this.medPrice;
+        this.pointsPS += 10;
+        this.medCount++;
+        this.medPrice += this.medPrice;
+        break
+      case 2:
+        this.points -= this.strPrice;
+        this.pointsPS += 20;
+        this.strCount++;
+        this.strPrice += this.strPrice;
+        break
+    }
   }
-  public type2() {
-    this.points -= this.strPrice;
-    this.pointsPS += 20;
-    this.strCount ++;
-    this.strPrice += this.strPrice;
-  }
+
 }

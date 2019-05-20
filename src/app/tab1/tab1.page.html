@@ -14,7 +14,7 @@
         </ion-card-content>
         <ion-row>
           <ion-col>
-            <span>Point:{{this.mainService.points}}</span>
+            <span>Point:{{this.mainService.points| filter  : 2}}</span>
           </ion-col>
           <ion-col style="width: 300px">
               <span>Points per click: {{this.mainService.pointsPC}}</span>
@@ -46,7 +46,7 @@
             [disabled]="this.mainService.points < this.mainService.lowPrice "  
             size="large" 
             style = "width: 100%" 
-            (click)="lowButton()">
+            (click)="this.mainService.autoclick(n = 0)">
             {{this.mainService.lowPrice}}P | Low click | x {{this.mainService.lowCount}}
             </ion-button>
             <ion-button 
@@ -54,7 +54,7 @@
             [disabled]="this.mainService.points < this.mainService.medPrice "             
             size="large" 
             style = "width: 100%" 
-            (click)="mediumButton()">
+            (click)="this.mainService.autoclick(n = 1)">
             {{this.mainService.medPrice}}P | Medium click | x {{this.mainService.medCount}}
             </ion-button>
             <ion-button 
@@ -62,7 +62,7 @@
             size="large" 
             [disabled]="this.mainService.points < this.mainService.strPrice " 
             style = "width: 100%" 
-            (click)="strongButton()">
+            (click)="this.mainService.autoclick(n = 2)">
             {{this.mainService.strPrice}}P | Strong click | x {{this.mainService.strCount}} 
             </ion-button>
           </ion-col>
