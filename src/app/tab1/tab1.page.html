@@ -20,7 +20,7 @@
               <span>Points per click: {{this.mainService.pointsPC}}</span>
             </ion-col>
           <ion-col style="width: 300px">
-            <span>Clicked per second: {{this.mainService.pointsPS}}</span>
+            <span>Clicked per second: {{this.mainService.pointsPS| filter : 2}}</span>
           </ion-col>
         </ion-row>
       </ion-col>
@@ -47,7 +47,7 @@
             size="large" 
             style = "width: 100%" 
             (click)="this.mainService.autoclick(n = 0)">
-            {{this.mainService.lowPrice}}P | Low click | x {{this.mainService.lowCount}}
+            {{this.mainService.lowPrice | filter}} | Low click | x {{this.mainService.lowCount}}
             </ion-button>
             <ion-button 
             expand="block" 
@@ -55,7 +55,7 @@
             size="large" 
             style = "width: 100%" 
             (click)="this.mainService.autoclick(n = 1)">
-            {{this.mainService.medPrice}}P | Medium click | x {{this.mainService.medCount}}
+            {{this.mainService.medPrice | filter}} | Medium click | x {{this.mainService.medCount}}
             </ion-button>
             <ion-button 
             expand="block"               
@@ -63,7 +63,7 @@
             [disabled]="this.mainService.points < this.mainService.strPrice " 
             style = "width: 100%" 
             (click)="this.mainService.autoclick(n = 2)">
-            {{this.mainService.strPrice}}P | Strong click | x {{this.mainService.strCount}} 
+            {{this.mainService.strPrice | filter}} | Strong click | x {{this.mainService.strCount}} 
             </ion-button>
           </ion-col>
     </ion-list>

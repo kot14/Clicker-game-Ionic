@@ -12,56 +12,62 @@
       <ion-col>
       <ion-button               
       size="large"
-      expand="block"               
+      expand="block"        
+      [disabled]="this.mainService.points < this.mainService.twPrice "         
       (click)="this.mainService.clickbuff(n=0)"
       >
-      5K P|twice click|X 0
+      {{this.mainService.twPrice | priceConverter}}|twice click|X {{this.mainService.twiceClick}}
       </ion-button>
     </ion-col>
     <ion-col>
       <ion-button               
         size="large"
         expand="block" 
+        [disabled]="this.mainService.points < this.mainService.spPrice " 
         (click)="this.mainService.clickbuff(n=1)"
         >
-        10k P|super click|X 0
+        {{this.mainService.spPrice| priceConverter}}|super click|X {{this.mainService.superClick}}
       </ion-button>
     </ion-col>
     <ion-col>
       <ion-button               
       size="large" 
       expand="block"
+      [disabled]="this.mainService.points < this.mainService.trbPrice " 
       (click)="this.mainService.clickbuff(n=2)"
       >
-      20K P|turbo click|x 0
+      {{this.mainService.trbPrice| priceConverter}}|turbo click|x {{this.mainService.turboClick}}
     </ion-button>
   </ion-col>
 
         <ion-col>
         <ion-button               
         size="large"
-        expand="block" 
+        expand="block"
+        [disabled]="this.mainService.points < this.mainService.mnPrice "  
         (click)="this.mainService.clickbuff(n=3)"
         >
-        40K P|many click|X 0
+        {{this.mainService.mnPrice| priceConverter}}|many click|X {{this.mainService.manyClick}}
         </ion-button>
       </ion-col>
       <ion-col>
         <ion-button               
           size="large" 
           expand="block"
+          [disabled]="this.mainService.points < this.mainService.vcPrice " 
           (click)="this.mainService.clickbuff(n=4)"
           >
-          80K P|very coast click|X 0
+          {{this.mainService.vcPrice| priceConverter}}|very coast click|X {{this.mainService.coastClick}}
         </ion-button>
       </ion-col>
       <ion-col>
         <ion-button               
         size="large" 
         expand="block"
+        [disabled]="this.mainService.points < this.mainService.lstPrice " 
         (click)="this.mainService.clickbuff(n=5)"
         >
-        100K P|WOW you can buy it!?|X 0
+        {{this.mainService.lstPrice| priceConverter}}|You can buy it!?|X {{this.mainService.lastClickBuff}}
       </ion-button>
     </ion-col>
   </ion-card>
